@@ -4,25 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noloyiso Copantsi | Wits ProMaths Candidate</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        
         :root {
             --primary-blue: #003366;
+            --primary-dark-blue: #001f3f;
             --primary-gold: #F4A900;
+            --primary-gold-light: #ffc233;
             --text-dark: #1a1a1a;
             --text-light: #555555;
-            --bg-light: #f8f9fa;
+            --bg-light: #f4f7f9;
             --white: #ffffff;
+            --font-heading: 'Merriweather', serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        
         html {
             scroll-behavior: smooth;
         }
@@ -30,29 +35,32 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            font-family: var(--font-body);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        
+       
         .top-banner {
             background-color: var(--white);
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
-            border-bottom: 4px solid var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .top-banner img {
             width: 100%;
-            max-width: 500px; 
+            max-width: 400px; 
             height: auto;
-            border-radius: 8px; 
+            border-radius: 6px; 
             display: block;
             margin: 0 auto;
         }
 
-       
+        
         nav {
-            background-color: var(--primary-blue);
+            background: linear-gradient(90deg, var(--primary-dark-blue) 0%, var(--primary-blue) 100%);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
@@ -60,204 +68,325 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         nav .logo {
             color: var(--white);
+            font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         nav a {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
             margin-left: 1.5rem;
             font-size: 0.9rem;
             font-weight: 500;
+            position: relative;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--primary-gold);
-        }
-
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #001a33 100%);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .profile-pic {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-gold);
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            background-color: var(--white);
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        header h2 {
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--primary-gold);
-            margin-bottom: 1rem;
-        }
-
-        header .subtitle {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            opacity: 0.9;
-        }
-
-        .cta-button {
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
             background-color: var(--primary-gold);
-            color: var(--primary-blue);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 15px rgba(244, 169, 0, 0.4);
+            transition: width 0.3s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background-color: #ffc233;
+        nav a:hover {
+            color: var(--primary-gold-light);
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
        
+        header {
+            background: radial-gradient(circle at top, var(--primary-blue) 0%, var(--primary-dark-blue) 100%);
+            color: var(--white);
+            padding: 3rem 2rem 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-pic {
+            width: 170px; 
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-gold);
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 20px rgba(244, 169, 0, 0.3), 0 8px 15px rgba(0,0,0,0.2);
+            background-color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.03);
+        }
+
+        header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        header h2 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--primary-gold-light);
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        header .subtitle {
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto 1.8rem auto;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-light) 100%);
+            color: var(--primary-dark-blue);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(244, 169, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(244, 169, 0, 0.5);
+        }
+
+        
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
 
         section {
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
             scroll-margin-top: 80px; 
         }
 
         h3.section-title {
-            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid var(--primary-gold);
             display: inline-block;
-            padding-bottom: 0.3rem;
+            position: relative;
+            padding-bottom: 0.4rem;
         }
 
-        
+        h3.section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), transparent);
+            border-radius: 2px;
+        }
+
+       
         .manifesto-text p {
             margin-bottom: 1.2rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-align: justify;
+            color: #333;
         }
 
         .manifesto-text strong {
             color: var(--primary-blue);
+            font-weight: 600;
         }
 
         .manifesto-quote {
+            position: relative;
             font-style: italic;
-            font-size: 1.2rem;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
             color: var(--primary-blue);
             border-left: 4px solid var(--primary-gold);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            background: #f0f4f8;
-            padding: 1.5rem;
+            margin: 1.8rem 0;
+            background: var(--white);
+            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
             border-radius: 0 8px 8px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            line-height: 1.6;
+        }
+
+        .manifesto-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0.8rem;
+            top: 0.2rem;
+            font-size: 3rem;
+            color: rgba(244, 169, 0, 0.15);
+            font-family: var(--font-heading);
+            line-height: 1;
         }
 
         
         .experience-box {
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-left: 8px solid var(--primary-gold);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
             position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .experience-box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary-gold), var(--primary-blue));
         }
 
         .experience-box h4 {
-            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
             color: var(--primary-blue);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .experience-box .highlight-text {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             display: block;
+            background: #f4f7f9;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-gold);
+        }
+
+        .experience-box p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         
         .vote-cta {
             text-align: center;
-            background: var(--primary-blue);
+            background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-blue) 100%);
             color: var(--white);
-            padding: 3rem 2rem;
-            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vote-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(244,169,0,0.15) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .vote-cta h3 {
-            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            color: var(--primary-gold-light);
         }
 
         .vote-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .positions {
             display: inline-block;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
             padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border: 1px solid var(--primary-gold);
+            border-radius: 50px;
+            margin: 0 0.4rem 1.2rem 0.4rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(244, 169, 0, 0.4);
+            color: var(--primary-gold-light);
+            transition: background 0.3s;
         }
 
-       
+        .positions:hover {
+            background: rgba(244, 169, 0, 0.15);
+        }
+
+        
         footer {
             text-align: center;
             padding: 2rem;
-            background: #e9ecef;
-            color: var(--text-light);
-            font-size: 0.9rem;
+            background: var(--primary-dark-blue);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            border-top: 3px solid var(--primary-gold);
+        }
+
+        footer p {
+            margin-bottom: 0.4rem;
         }
 
         
         @media (max-width: 600px) {
-            .top-banner img { max-width: 100%; }
-            header h1 { font-size: 2rem; }
-            header h2 { font-size: 1.1rem; }
-            nav { padding: 1rem; flex-direction: column; gap: 0.5rem; }
-            nav a { margin: 0 0.5rem; }
-            .cta-button { padding: 0.8rem 1.5rem; font-size: 1rem; }
+            .top-banner img { max-width: 90%; }
+            header h1 { font-size: 1.8rem; }
+            header h2 { font-size: 1rem; }
+            header { padding: 2.5rem 1.2rem 2rem 1.2rem; }
+            nav { padding: 1rem; flex-direction: column; gap: 0.6rem; }
+            nav a { margin: 0 0.6rem; font-size: 0.85rem; }
+            .cta-button { padding: 0.7rem 1.5rem; font-size: 0.95rem; }
             .experience-box { padding: 1.5rem; }
-            .profile-pic { width: 180px; height: 180px; }
+            .profile-pic { width: 140px; height: 140px; }
+            .manifesto-quote { padding: 1.2rem 1.2rem 1.2rem 2rem; font-size: 0.95rem; }
+            .vote-cta { padding: 2rem 1.2rem; }
+            .vote-cta h3 { font-size: 1.4rem; }
+            .positions { margin: 0 0 0.8rem 0; display: block; width: fit-content; margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
@@ -265,11 +394,10 @@
 
     
     <div class="top-banner">
-        
         <img src="WhatsApp Image 2026-09-20 at 01.04.13.jpeg" alt="Wits ProMaths Logo">
     </div>
 
-   
+    
     <nav>
         <div class="logo">Noloyiso Copantsi</div>
         <div>
@@ -281,7 +409,6 @@
 
     
     <header>
-       
         <img src="WhatsApp Image 2026-09-20 at 01.04.14.jpeg" alt="Noloyiso Copantsi" class="profile-pic">
         
         <h1>Noloyiso Copantsi</h1>
@@ -343,7 +470,6 @@
                 <p>
                     This experience has taught me exactly what it takes to <strong>lead and work with people</strong>. It’s not just about holding a title; it’s about sitting in meetings, understanding the academic pressures we face, and bridging the gap between the students and the faculty. 
                 </p>
-                <br>
                 <p>
                     I know the struggles of our courses, I know the administrative hurdles, and I know how to communicate effectively to get results. I have spent the last two years being the voice for my peers, and I am ready to scale that impact for all of Wits ProMaths.
                 </p>
@@ -358,7 +484,7 @@
                 <div class="positions">Academics Office</div>
                 <div class="positions">Deputy Chairperson</div>
                 <p>If you want a leader who is not just a face on a poster, but someone who is in the trenches with you, someone who has a track record of showing up and advocating for students—I am your candidate.</p>
-                <p style="font-weight: bold; font-size: 1.3rem; margin-top: 1rem;">Let’s ensure real progress, together! 🗳️💙</p>
+                <p style="font-weight: bold; font-size: 1.15rem; margin-top: 1rem; color: var(--primary-gold-light);">Let’s ensure real progress, together! 🗳️💙</p>
             </div>
         </section>
 
